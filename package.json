@@ -1,0 +1,83 @@
+{
+  "name": "react-native-config-encrypted",
+  "version": "1.0.0",
+  "description": "React Native Config with encrypted values",
+  "main": "./src/index.js",
+  "scripts": {
+    "lint": "eslint --report-unused-disable-directives src",
+    "fix": "eslint --fix --report-unused-disable-directives src",
+    "test": "jest --coverage",
+    "coveralls": "cat ./coverage/lcov.info | coveralls",
+    "setup": "cp ./.github/hooks/pre-commit ./.git/hooks/pre-commit && chmod +x ./.git/hooks/pre-commit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/react-native-nation/react-native-config-encrypted.git"
+  },
+  "keywords": [
+    "react-native-config",
+    "react-native-config-encrypted"
+  ],
+  "author": "jamesjara",
+  "license": "MIT",
+  "bin": {
+    "env-config-encrypt": "./src/cli.js"
+  },
+  "bugs": {
+    "url": "https://github.com/react-native-nation/react-native-config-encrypted/issues"
+  },
+  "homepage": "https://github.com/react-native-nation/react-native-config-encrypted#readme",
+  "devDependencies": {
+    "@babel/core": "^7.8.7",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/preset-env": "^7.8.7",
+    "@babel/preset-react": "^7.8.3",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "8.1.0",
+    "coveralls": "^3.0.9",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "enzyme-to-json": "^3.4.3",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-react": "^7.17.0",
+    "jest": "^26.0.1",
+    "jest-enzyme": "^7.1.2",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0"
+  },
+  "dependencies": {
+    "crypto-js": "^4.0.0",
+    "prop-types": "^15.7.2",
+    "react-native-config": "^1.1.0",
+    "react-native-crypto-js": "^1.0.0"
+  },
+  "peerDependencies": {
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,mjs}",
+      "!src/index.js"
+    ],
+    "testEnvironment": "node",
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "src"
+    ],
+    "setupFilesAfterEnv": [
+      "<rootDir>/node_modules/jest-enzyme/lib/index.js",
+      "<rootDir>/jest-setup-tests.js"
+    ],
+    "transform": {
+      "^.+\\.js$": "babel-jest"
+    }
+  }
+}
