@@ -21,9 +21,6 @@ This package is a wrapper to encrypt the variables used by the `react-native-con
 * [Encrypting env variables](#encrypting)
 * [API Methods](#using)
 * [Example](#example)
-* [Travis CI](#travis)
-* [Coveralls](#coveralls)
-* [Badges in the readme](#badges)
 * [Community profile](#community)
 * [Contributing](#contributing)
 
@@ -39,13 +36,6 @@ then our react native nation library.
 ```bash
 yarn add react-native-config-encrypted
 ```
-<a name="initializing"></a>
-## Initializing the package
-The first step is to initialize your package. You should execute following command:
-```bash
-npm init
-```
-And fill in the required fields (package name, version, license). You can correct the other fields manually in the **package.json**.
 
 <a name="encrypting"></a>
 ## Encrypting env variables
