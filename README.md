@@ -62,8 +62,11 @@ Config.get(propertyName, decrypt);
 # Config
 To configure the seed key use `configure`.
 ```js
+import * as ConfigProvider from 'react-native-config';
+
 Config.configure({
-    key: your key
+    key: "your key",
+    provider: ConfigProvider
 });
 ```
 
@@ -72,11 +75,13 @@ Config.configure({
 React native example
 
 ```js
+import * as ConfigProvider from 'react-native-config';
 import Config from 'react-native-config-encrypted';
 
 // Configure your library to use the seed key
 Config.configure({
     key: 'mysuperkey^$#123123ASDASD',
+    provider: ConfigProvider
 });
 
 // Get the env property
