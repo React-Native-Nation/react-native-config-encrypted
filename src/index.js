@@ -1,11 +1,11 @@
-import Config from 'react-native-config';
-import Crypto from 'react-native-crypto-js';
+import Crypto from 'crypto-js';
 
 class SecureConfig {
   static key;
 
-  static configure ({ key }) {
+  static configure ({ key, provider }) {
     SecureConfig.key = key;
+    SecureConfig.configProvider = provider;
   }
 
   static encrypt (msg = '') {
@@ -29,7 +29,7 @@ class SecureConfig {
   }
 
   static get (key, decrypt = true) {
-    return decrypt ? SecureConfig.decrypt(Config[key]) : Config[key];
+    return decrypt ? SecureConfig.decrypt(SecureConfig.configProvider[key]) : SecureConfig.configProvider[key];
   }
 } 
 
